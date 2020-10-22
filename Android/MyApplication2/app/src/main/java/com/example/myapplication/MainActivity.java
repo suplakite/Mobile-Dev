@@ -9,6 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.view.View;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class MainActivity extends AppCompatActivity {
 
     float [] fields = new float[9];
@@ -39,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(this.max);
         System.out.println(this.num);
         System.out.println("-------------");
-
 
         Figures[] figures = Program.main(this.min,this.max,this.num);
 

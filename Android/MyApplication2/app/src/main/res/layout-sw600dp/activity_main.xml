@@ -7,83 +7,92 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_settings1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:onClick="runActivity"
-        android:text="Settings"
+    <RelativeLayout
+        android:layout_width="556dp"
+        android:layout_height="225dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.274"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037">
 
-    <Button
-        android:id="@+id/btn_stats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="64dp"
-        android:onClick="runActivity"
-        android:text="Stats"
-        app:layout_constraintEnd_toStartOf="@+id/btn_settings1"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_settings1"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="407dp"
+            android:layout_marginTop="138dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Trait" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="88dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Trait"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="233dp"
+            android:layout_marginTop="138dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Field" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="88dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Field"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_settings1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="414dp"
+            android:onClick="runActivity"
+            android:text="Settings" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="88dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Figure"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="138dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Figure" />
+
+        <Button
+            android:id="@+id/btn_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="64dp"
+            android:onClick="runActivity"
+            android:text="Stats" />
+    </RelativeLayout>
 
     <ScrollView
-        android:layout_width="516dp"
-        android:layout_height="639dp"
+        android:layout_width="554dp"
+        android:layout_height="574dp"
         android:layout_margin="10dp"
         android:layout_marginTop="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944">
 
         <LinearLayout
             android:id="@+id/layout"

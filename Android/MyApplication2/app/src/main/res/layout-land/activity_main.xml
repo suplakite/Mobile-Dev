@@ -7,78 +7,94 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_settings1"
-        android:layout_width="95dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="428dp"
-        android:layout_marginTop="12dp"
-        android:onClick="runActivity"
-        android:text="Settings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_stats"
-        android:layout_width="111dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="424dp"
-        android:onClick="runActivity"
-        android:text="Stats"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="662dp"
+        android:layout_height="126dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="52dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Trait"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="52dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Field"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="52dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Figure"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056">
+
+        <Button
+            android:id="@+id/btn_settings1"
+            android:layout_width="95dp"
+            android:layout_height="43dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="428dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="506dp"
+            android:onClick="runActivity"
+            android:text="Settings" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="485dp"
+            android:layout_marginTop="58dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Trait" />
+
+        <Button
+            android:id="@+id/btn_stats"
+            android:layout_width="111dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="284dp"
+            android:onClick="runActivity"
+            android:text="Stats" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="57dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Field" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="58dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Figure" />
+    </RelativeLayout>
 
     <ScrollView
-        android:layout_width="687dp"
-        android:layout_height="264dp"
+        android:id="@+id/scrollView3"
+        android:layout_width="665dp"
+        android:layout_height="167dp"
         android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.902">
 
         <LinearLayout
             android:id="@+id/layout"

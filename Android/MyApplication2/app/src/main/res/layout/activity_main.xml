@@ -7,56 +7,15 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Trait"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Field"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="96dp"
-        android:background="#B13838"
-        android:padding="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:text="Figure"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ScrollView
-        android:layout_width="392dp"
-        android:layout_height="496dp"
-        android:layout_margin="10dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="360dp"
+        android:layout_height="396dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.763">
 
         <LinearLayout
             android:id="@+id/layout"
@@ -65,26 +24,89 @@
             android:orientation="vertical" />
     </ScrollView>
 
-    <Button
-        android:id="@+id/btn_settings1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
-        android:onClick="runActivity"
-        android:text="Settings"
+    <RelativeLayout
+        android:layout_width="401dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105">
 
-    <Button
-        android:id="@+id/btn_stats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
-        android:onClick="runActivity"
-        android:text="Stats"
-        app:layout_constraintStart_toEndOf="@+id/btn_settings1"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="156dp"
+            android:layout_marginTop="27dp"
+            android:onClick="runActivity"
+            android:text="Stats" />
+
+        <Button
+            android:id="@+id/btn_settings1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="28dp"
+            android:onClick="runActivity"
+            android:text="Settings" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="86dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Figure" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="85dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Field" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="277dp"
+            android:layout_marginTop="85dp"
+            android:background="#B13838"
+            android:padding="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Trait" />
+
+        <Button
+            android:id="@+id/orderby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="285dp"
+            android:layout_marginBottom="6dp"
+            android:text="Figures" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

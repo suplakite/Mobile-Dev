@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+    <RelativeLayout
+        android:layout_width="415dp"
+        android:layout_height="399dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.014">
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="268dp"
+            android:layout_marginEnd="172dp"
+            android:onClick="runActivity"
+            android:text="Submit" />
+
+        <EditText
+            android:id="@+id/min_dimension"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="231dp"
+            android:layout_marginBottom="145dp"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/max_dimension"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="67dp"
+            android:layout_marginBottom="146dp"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/num_of_elems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="109dp"
+            android:layout_marginBottom="272dp"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/num_of_elems"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="135dp"
+            android:layout_marginBottom="5dp"
+            android:text="NumberOfElements"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="206dp"
+            android:layout_toStartOf="@+id/textView12"
+            android:text="MinDimension: "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="71dp"
+            android:layout_marginBottom="206dp"
+            android:text="MaxDimension:"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
