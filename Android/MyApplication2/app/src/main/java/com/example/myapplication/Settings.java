@@ -1,33 +1,34 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Settings extends AppCompatActivity {
 
     public int max, min, num;
 
-    public void setMax(int max) {
-        this.max = max;
-    }
-    public int get_max() {return max;}
-    public void setMin(int min) {
-        this.min = min;
+    public int get_max() {
+        return max;
     }
 
     public int getMax() {
         return max;
     }
 
+    public void setMax(int max) {
+        this.max = max;
+    }
+
     public int getMin() {
         return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
     }
 
     public int getNum() {
@@ -49,40 +50,40 @@ public class Settings extends AppCompatActivity {
             this.setMin(extras.getInt("min"));
             this.setNum(extras.getInt("num"));
             if (this.getMax() != 0) {
-                EditText max_dimension = (EditText) findViewById(R.id.max_dimension);
+                EditText max_dimension = findViewById(R.id.max_dimension);
                 max_dimension.setText(Integer.toString(this.max));
             }
             if (this.getMin() != 0) {
-                EditText min_dimension = (EditText) findViewById(R.id.min_dimension);
+                EditText min_dimension = findViewById(R.id.min_dimension);
                 min_dimension.setText(Integer.toString(this.min));
             }
             if (this.getNum() != 0) {
-                EditText num_of_elems = (EditText) findViewById(R.id.num_of_elems);
+                EditText num_of_elems = findViewById(R.id.num_of_elems);
                 num_of_elems.setText(Integer.toString(this.num));
             }
         }
     }
 
 
-    public void runActivity (View view){
+    public void runActivity(View view) {
         Intent intent = null;
         int requestCode = 1;
         switch (view.getId()) {
             case R.id.btn_submit:
                 System.out.println("Submit");
                 intent = new Intent(this, MainActivity.class);
-                EditText min_dimension = (EditText) findViewById(R.id.min_dimension);
-                String mina = (String) min_dimension.getText().toString();
-                EditText max_dimension = (EditText) findViewById(R.id.max_dimension);
-                String maxa = (String) max_dimension.getText().toString();
-                EditText num_of_elems = (EditText) findViewById(R.id.num_of_elems);
-                String numa = (String) num_of_elems.getText().toString();
+                EditText min_dimension = findViewById(R.id.min_dimension);
+                String mina = min_dimension.getText().toString();
+                EditText max_dimension = findViewById(R.id.max_dimension);
+                String maxa = max_dimension.getText().toString();
+                EditText num_of_elems = findViewById(R.id.num_of_elems);
+                String numa = num_of_elems.getText().toString();
 
                 System.out.println("LENGTH");
                 System.out.println(mina.length());
                 System.out.println(get_max());
 
-                if (mina.matches("") || maxa.matches("")){
+                if (mina.matches("") || maxa.matches("")) {
                     intent.putExtra("min", Integer.toString(0));
                     intent.putExtra("max", Integer.toString(0));
                 } else {
@@ -90,10 +91,11 @@ public class Settings extends AppCompatActivity {
                     intent.putExtra("max", maxa);
                 }
 
-                if (numa.matches("")){
+                if (numa.matches("")) {
                     intent.putExtra("num", Integer.toString(0));
-                } else {intent.putExtra("num", numa);}
-
+                } else {
+                    intent.putExtra("num", numa);
+                }
 
 
                 requestCode = 1;

@@ -16,6 +16,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037">
 
+        <Button
+            android:id="@+id/orderby_figures2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="407dp"
+            android:layout_marginBottom="34dp"
+            android:onClick="runActivity"
+            android:text="Figures" />
+
+        <Button
+            android:id="@+id/orderby_fields2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="223dp"
+            android:layout_marginBottom="34dp"
+            android:onClick="runActivity"
+            android:text="Fields" />
+
+        <Button
+            android:id="@+id/orderby_triats2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="33dp"
+            android:onClick="runActivity"
+            android:text="Triats" />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"

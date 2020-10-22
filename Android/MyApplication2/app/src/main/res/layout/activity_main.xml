@@ -98,14 +98,37 @@
             android:text="Trait" />
 
         <Button
-            android:id="@+id/orderby"
+            android:id="@+id/orderby_figures"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="285dp"
             android:layout_marginBottom="6dp"
+            android:onClick="runActivity"
             android:text="Figures" />
+
+        <Button
+            android:id="@+id/orderby_fields"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="159dp"
+            android:layout_marginBottom="9dp"
+            android:onClick="runActivity"
+            android:text="Fields" />
+
+        <Button
+            android:id="@+id/orderby_triats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="11dp"
+            android:onClick="runActivity"
+            android:text="Triats" />
 
     </RelativeLayout>
 

@@ -19,6 +19,39 @@
         app:layout_constraintVertical_bias="0.056">
 
         <Button
+            android:id="@+id/orderby_figures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="508dp"
+            android:layout_marginBottom="14dp"
+            android:onClick="runActivity"
+            android:text="Figures" />
+
+        <Button
+            android:id="@+id/orderby_fields"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="296dp"
+            android:layout_marginBottom="14dp"
+            android:onClick="runActivity"
+            android:text="Fields" />
+
+        <Button
+            android:id="@+id/orderby_triats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="77dp"
+            android:layout_marginBottom="14dp"
+            android:onClick="runActivity"
+            android:text="Triats" />
+
+        <Button
             android:id="@+id/btn_settings1"
             android:layout_width="95dp"
             android:layout_height="43dp"
@@ -61,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="264dp"
+            android:layout_marginStart="267dp"
             android:layout_marginTop="57dp"
             android:background="#B13838"
             android:padding="20dp"

@@ -4,6 +4,8 @@ public abstract class Figures {
 
     private float linearDimension;
     private String name;
+    protected double field;
+
     public float getLinearDimension() {
         return linearDimension;
     }
@@ -20,18 +22,22 @@ public abstract class Figures {
         this.name = name;
     }
 
-    public double roundTo3DecimalPlaces(float numb){
+    public double roundTo3DecimalPlaces(float numb) {
         return Math.round(numb * 1000.0) / 1000.0;
     }
 
-    public double roundTo3DecimalPlaces(double numb){
+    public double roundTo3DecimalPlaces(double numb) {
         return Math.round(numb * 1000.0) / 1000.0;
     }
 
-
+    public abstract double getDimension();
 
     public abstract String dimension();
+
     public abstract double field();
+
     public abstract int getImage();
+
+    public double getField() { return field; }
 
 }

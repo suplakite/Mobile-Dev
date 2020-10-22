@@ -1,20 +1,25 @@
 package com.example.myapplication;
-import com.example.myapplication.Figures;
 
 public class Circle extends Figures {
 
-    public Circle(float linearDimension, String name){
+    public Circle(float linearDimension, String name) {
         this.setLinearDimension(linearDimension);
         this.setName(name);
+        this.field = this.field();
     }
 
     public double getDiameter() {
-        return this.roundTo3DecimalPlaces(2*this.getLinearDimension());
-        }
+        return this.roundTo3DecimalPlaces(2 * this.getLinearDimension());
+    }
 
     @Override
-    public double field(){
+    public double field() {
         return this.roundTo3DecimalPlaces(3.14 * this.getLinearDimension() * this.getLinearDimension());
+    }
+
+    @Override
+    public double getDimension() {
+        return this.getDiameter();
     }
 
     @Override
@@ -23,7 +28,8 @@ public class Circle extends Figures {
     }
 
     @Override
-    public int getImage(){
+    public int getImage() {
         return R.drawable.circle;
     }
+
 }

@@ -1,11 +1,10 @@
 package com.example.myapplication;
 
-import com.example.myapplication.Figures;
-
-public class Square extends Figures{
-    Square(float linearDimension, String name){
+public class Square extends Figures {
+    Square(float linearDimension, String name) {
         this.setLinearDimension(linearDimension);
         this.setName(name);
+        this.field = this.field();
     }
 
     public double getDiagonal() {
@@ -18,12 +17,17 @@ public class Square extends Figures{
     }
 
     @Override
+    public double getDimension() {
+        return this.getDiagonal();
+    }
+
+    @Override
     public String dimension() {
         return ("Diagonal\n" + this.getDiagonal());
     }
 
     @Override
-    public int getImage(){
+    public int getImage() {
         return R.drawable.square;
     }
 }

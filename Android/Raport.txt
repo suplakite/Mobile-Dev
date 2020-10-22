@@ -1,4 +1,4 @@
-Tomasz Miga³a Raport LAB2
+Tomasz Miga³a Raport LAB3
 
 Dla jakich wersji API zaprojektowana zosta³a aplikacja: API 27 
 Dla jakich wersji API przetestowana zosta³a aplikacja: API 27
@@ -8,14 +8,32 @@ Jakie by³y parametry testowego emulatora: 1080 x 1920; 420dpi
 Czy s¹ jakieœ ograniczenia aplikacji w zwi¹zku z rozmiarem ekranu: Nie
 
 Z ilu aktywnoœci (a tak¿e innych sk³adników) zbudowana jest aplikacja: 
-Aplikacja zbudowana jest z jednej aktywnoœci, sk³ada siê z: 2 LinearLayout (1 horizontal, 1 vertical), 1 SrollView w którym znajduj¹ siê dynamicznie 
-przydzielane "opisy wygenerowanych figur",
-w sumie 5 TextView (3 okreœlaj¹ce kolumny, dwa okreœlaj¹ce parametry danej figury), oraz 1 ImageView zawieraj¹cy obrazek reprezentuj¹cy dan¹ figurê.
+Aplikacja zbudowana jest z trzech aktywnoœci: 
+	- MainActivity: 2 LinearLayout (1 horizontal, 1 vertical), 
+	  1 SrollView w którym znajduj¹ siê dynamicznie przydzielane 
+	  "opisy wygenerowanych figur",w sumie 5 TextView, 
+	  oraz 1 ImageView zawieraj¹cy obrazek reprezentuj¹cy dan¹ figurê.
+	  5x Button - 2 do prze³¹czania na poni¿sze aktywnoœci, 3 do sortowania danych, 
+	  buttony umieszczone s¹ jako opisy danych kolumn, 
+	  Co wydaje mi siê dosyæ intuicyjne, ¿e sortujemy klikaj¹c "nag³ówek danej kolumny".
+	- Settings: RelativeLayout, 3x EditText, 1x Button
+	- Stats: RelativeLayout, 15xTextView, 1xButton
 
-W jaki sposób uruchamiane s¹ pozosta³e aktywnoœci (poza startow¹): BRAK
 
-W jaki sposób przekazywane s¹ dane pomiêdzy aktywnoœciami: BRAK
+W jaki sposób uruchamiane s¹ pozosta³e aktywnoœci (poza startow¹): 
+	Poprzez przypisanie do odpowiednich przycisków(onClick) 
+	metod "runActivity", 
+	w kórej sprawdzane jest jaki przycisk zosta³ klikniêty, 
+	nastêpnie tworzony jest nowy Intent, oraz wywo³ywany 
+	funkcj¹ startActivityForResult(intent, requestCode);
 
-Czy i jak przechowywane s¹ dane aktywnoœci: Dane s¹ przechowywane w obiektach Circle, Triangle, Square tworzonych losowo poprzez generator liczb losowych.
+W jaki sposób przekazywane s¹ dane pomiêdzy aktywnoœciami: Przekazywane s¹ poprzez metodê "putExtra" Klasy intent
 
-Z jakich sk³adników zbudowane s¹ uk³ady graficzne poszczególnych aktywnoœci: ScrollView ,LinearLayout Vertical,LinearLayout Horizontal, TextView, ImageView.
+Czy i jak przechowywane s¹ dane aktywnoœci: 
+	Dane s¹ przechowywane w obiektach 
+	Circle, Triangle, Square tworzonych 
+	losowo poprzez generator liczb losowych.
+
+Z jakich sk³adników zbudowane s¹ uk³ady graficzne poszczególnych aktywnoœci: 
+	ScrollView , RelativeView, LinearLayout Vertical, 
+	LinearLayout Horizontal, TextView, ImageView, EditText.
