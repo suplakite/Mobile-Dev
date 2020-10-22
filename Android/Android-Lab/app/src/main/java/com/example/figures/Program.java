@@ -1,10 +1,10 @@
 package com.example.figures;
-
+import com.example.figures.Figures;
 import java.util.*;
 
 public class Program {
 
-    public static void main() {
+    public static Figures[] main() {
         Random generator = new Random();
 
         int tableSize = 10;
@@ -33,5 +33,7 @@ public class Program {
         for(int i=0; i<tableSize; i+=1) {
             System.out.println(figures[i].getName() + ": Field - " + figures[i].field() + " " + figures[i].dimension());
         }
+
+        return figures;
     }
 }

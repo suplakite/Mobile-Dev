@@ -13,7 +13,19 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.*;
+import com.example.figures.Figures;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +36,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Program.main();
+//        LinearLayout ln = (LinearLayout) findViewById(R.id.LinearLayout1);
+//
+////        Figures figures[] = Program.main();
+//        TextView text = new TextView(this);
+//        text.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+//        text.setText("Tomek");
+//        ln.addView(text);
+//        for(int i=0; i<figures.length; i++){
+//            text.setText(figures[i].getName());
+////            ln.addView(text);
+//            System.out.println(text.getText());
+//        }
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

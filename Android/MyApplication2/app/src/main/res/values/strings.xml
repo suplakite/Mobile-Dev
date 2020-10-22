@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="text_left">Figures</string>
+    <string name="text_right">Field</string>
+    <string name="text_center">Triat</string>
+</resources>
