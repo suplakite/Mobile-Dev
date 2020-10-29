@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Settings extends AppCompatActivity {
@@ -64,7 +66,6 @@ public class Settings extends AppCompatActivity {
         }
     }
 
-
     public void runActivity(View view) {
         Intent intent = null;
         int requestCode = 1;
@@ -83,6 +84,22 @@ public class Settings extends AppCompatActivity {
                 System.out.println(mina.length());
                 System.out.println(get_max());
 
+                boolean greater = true;
+
+                try{
+                    if (Integer.parseInt(mina) >= Integer.parseInt(maxa)) {
+                        Toast.makeText(this, "MIN > MAX !!!!", Toast.LENGTH_SHORT).show();
+                        greater = false;
+                    } else if (Integer.parseInt(mina) >= Integer.parseInt(maxa)){
+                        Toast.makeText(this, "MIN = MAX !!!!", Toast.LENGTH_SHORT).show();
+                        greater = false;
+                    }
+
+                } catch (Exception e) {
+                    System.out.println();
+                }
+
+
                 if (mina.matches("") || maxa.matches("")) {
                     intent.putExtra("min", Integer.toString(0));
                     intent.putExtra("max", Integer.toString(0));
@@ -98,9 +115,14 @@ public class Settings extends AppCompatActivity {
                 }
 
 
-                requestCode = 1;
+                if (greater){
+                    requestCode = 1;
+                    startActivityForResult(intent, requestCode);
+                }
+
+
+
                 break;
         }
-        startActivityForResult(intent, requestCode);
     }
 }

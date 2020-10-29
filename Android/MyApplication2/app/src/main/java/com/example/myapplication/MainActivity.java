@@ -2,11 +2,18 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -19,15 +26,17 @@ public class MainActivity extends AppCompatActivity {
     private int min = 0;
     private int max = 0;
     private int num = 0;
-
+    private View temp;
     private ArrayList<Figures> figures;
-
+    private int ordered_By = 0;
     private void insertFigures(int orderBy) {
         LinearLayout linearLayout = findViewById(R.id.layout);
 
         if (orderBy == 1) {
+            ordered_By = 1;
             this.figures.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
         } else if (orderBy == 2) {
+            ordered_By = 2;
             System.out.println(figures);
             Collections.sort(figures, new Comparator<Figures>() {
                 @Override
@@ -37,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             });
             System.out.println(figures);
         } else if (orderBy == 3) {
+            ordered_By = 3;
             Collections.sort(figures, new Comparator<Figures>() {
                 @Override
                 public int compare(Figures o1, Figures o2) {
@@ -44,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
+        for(int i=0; i < fields.length ; i++){
+            fields[i] = 0;
+        }
 
         figures.forEach(figure -> {
             if (figure.getName().equals("Triangle")) {
@@ -62,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
             System.out.println(figure.getField());
             View oneRow = getLayoutInflater().inflate(R.layout.tricot, null);
+
             ImageView image = oneRow.findViewById(R.id.figureImage);
             TextView text1 = oneRow.findViewById(R.id.textView2);
             TextView text2 = oneRow.findViewById(R.id.textView3);
@@ -69,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             text1.setText(Double.toString(figure.getField()));
             text2.setText(figure.dimension());
             linearLayout.addView(oneRow);
+            registerForContextMenu(oneRow);
         });
     }
 
@@ -76,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(savedInstanceState != null){
+            System.out.println(savedInstanceState.getString("count"));
+        }
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -90,6 +109,70 @@ public class MainActivity extends AppCompatActivity {
             this.fields[i] = 0;
         }
         insertFigures(0);
+
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("count", "Counts Tomek");
+//        outState.putParcelableArrayList("Figures", figures);
+//        outState.putParcelableArrayList();
+    }
+
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        temp=v;
+        System.out.println(v.getId());
+//        switch(v.getId()){
+//
+//        }
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+
+        LinearLayout linearLayout = findViewById(R.id.layout);
+
+        switch(item.getItemId()){
+            case R.id.option_1:
+
+                int figure_to_remove = linearLayout.indexOfChild(temp);
+                linearLayout.removeView(temp);
+
+                Figures figure = figures.get(figure_to_remove);
+
+                if (figure.getName().equals("Triangle")) {
+                this.fields[3] -= 1;
+                } else if (figure.getName().equals("Circle")) {
+                    this.fields[5] -= 1;
+                } else if (figure.getName().equals("Square")) {
+                    this.fields[4] -= 1;
+                }
+                Toast.makeText(this, figure.getName() + " Removed", Toast.LENGTH_SHORT).show();
+                figures.remove(figure_to_remove);
+
+                System.out.println(figure_to_remove);
+                return true;
+            case R.id.option_3:
+
+                int figure_to_copy = linearLayout.indexOfChild(temp);
+                Figures figure_copy = figures.get(figure_to_copy);
+                figures.add(figure_copy);
+                linearLayout.removeAllViews();
+                this.insertFigures(this.ordered_By);
+                Toast.makeText(this, figure_copy.getName() + " Copied", Toast.LENGTH_SHORT).show();
+
+
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
 
     }
 
@@ -137,6 +220,9 @@ public class MainActivity extends AppCompatActivity {
                 lay2.removeAllViews();
                 this.insertFigures(3);
                 break;
+            case R.id.btn_autor:
+                intent = new Intent(this, AutorInfo.class);
+                startActivityForResult(intent, requestCode);
         }
 
     }

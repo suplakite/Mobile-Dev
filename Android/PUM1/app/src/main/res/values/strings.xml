@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">PUM-lab1</string>
-
-    <string-array name="choices">
-        <item>Add</item>
-        <item>Sub</item>
-    </string-array>
-
-</resources>
