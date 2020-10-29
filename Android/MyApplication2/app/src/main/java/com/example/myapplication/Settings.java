@@ -113,7 +113,18 @@ public class Settings extends AppCompatActivity {
                 } else {
                     intent.putExtra("num", numa);
                 }
-
+                try {
+                    System.out.println("Tomek");
+                    System.out.println(max == Integer.parseInt(maxa));
+                    System.out.println(min == Integer.parseInt(mina));
+                    System.out.println(num == Integer.parseInt(numa));
+                    if(this.getMax() == Integer.parseInt(maxa) && this.getMin() == Integer.parseInt(mina) && this.getNum() == Integer.parseInt(numa)){
+                        finish();
+                        break;
+                    }
+                } catch (Exception e){
+                    System.out.println();
+                }
 
                 if (greater){
                     requestCode = 1;

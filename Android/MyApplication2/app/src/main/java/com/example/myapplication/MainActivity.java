@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(savedInstanceState != null){
             System.out.println(savedInstanceState.getString("count"));
+            System.out.println(savedInstanceState.getParcelableArrayList("Figures"));
         }
 
 
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("count", "Counts Tomek");
-//        outState.putParcelableArrayList("Figures", figures);
+//        outState.putParcelableArrayList("Figures", (ArrayList<? extends Parcelable>) figures);
 //        outState.putParcelableArrayList();
     }
 
@@ -170,10 +172,14 @@ public class MainActivity extends AppCompatActivity {
 
 
                 return true;
+            case R.id.option_2:
+                Figures new_figure = Program.one_figure(this.min, this.max);
+                figures.add(new_figure);
+                linearLayout.removeAllViews();
+                this.insertFigures(this.ordered_By);
             default:
                 return super.onContextItemSelected(item);
         }
-
     }
 
     public void runActivity(View view) {

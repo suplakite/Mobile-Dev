@@ -48,4 +48,34 @@ public class Program {
 
         return figures;
     }
+
+    public static Figures one_figure(float min, float max) {
+        Random generator = new Random();
+        int type = generator.nextInt(3);
+
+        Figures fig = new Triangle(1, 2, "Triangle");
+
+        switch (type) {
+            case 0: {
+                Triangle triangle = new Triangle(
+                        min + generator.nextFloat() * (max - min),
+                        (min + generator.nextFloat() * (max - min)), "Triangle");
+                fig = triangle;
+                break;
+            }
+            case 1: {
+                Circle circle = new Circle(min + generator.nextFloat() * (max - min), "Circle");
+                fig = circle;
+                break;
+            }
+            case 2: {
+                Square square = new Square(min + generator.nextFloat() * (max - min), "Square");
+                fig = square;
+                break;
+            }
+
+        }
+
+        return fig;
+    }
 }
